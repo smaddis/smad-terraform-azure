@@ -30,6 +30,22 @@ output "azurerm_user_assigned_identity" {
     value = "${azurerm_kubernetes_cluster.k8s_cluster.name}-agentpool"
 }
 
-output "azurerm_k8s_cluster_node_resource_group" {
+output "k8s_cluster_node_resource_group" {
     value = azurerm_kubernetes_cluster.k8s_cluster.node_resource_group
+}
+
+output "mi_principal_id" {
+  value = azurerm_kubernetes_cluster.k8s_cluster.identity[0].principal_id
+}
+
+output "mi_tenant_id" {
+  value = azurerm_kubernetes_cluster.k8s_cluster.identity[0].tenant_id
+}
+
+output "kubelet_client_id" {
+  value = azurerm_kubernetes_cluster.k8s_cluster.kubelet_identity[0].client_id
+}
+
+output "kubelet_object_id" {
+  value = azurerm_kubernetes_cluster.k8s_cluster.kubelet_identity[0].object_id
 }
