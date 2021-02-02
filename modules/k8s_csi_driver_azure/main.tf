@@ -1,9 +1,10 @@
 provider "helm" {
     kubernetes {
-        load_config_file       = false
-        host                   = var.k8s_host
-        username               = var.k8s_username
-        password               = var.k8s_password
+        config_path = "~/.kube/config" # Replace if you have different kubeconfig path!
+        config_context = "rbackuksatrng-k8stest-cluster-admin" # Replace with your admin context name!
+        # host                   = var.k8s_host
+        # username               = var.k8s_username
+        # password               = var.k8s_password
         client_certificate     = base64decode(var.k8s_client_cert)
         client_key             = base64decode(var.k8s_client_key)
         cluster_ca_certificate = base64decode(var.k8s_cluster_ca_cert)
