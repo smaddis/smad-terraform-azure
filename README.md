@@ -1,5 +1,9 @@
 Just practice based on https://docs.microsoft.com/en-us/azure/developer/terraform/create-k8s-cluster-with-tf-and-aks
 
+- TODO: create AD group via this Terraform script.
+- TODO: assign user as cluster admin via this Terraform script.
+- TODO: improve README
+
 ### Infrastucture preparation for Kuksa Cloud
 
 In order to deploy Kuksa Cloud, Terraform -tool is first used create necessary infrastucture resources into Microsoft Azure.
@@ -73,22 +77,33 @@ To enable RBAC through AAD via this Terraform plan the following steps were done
 - In step `Create demo users in Azure AD`, new users weren't created. Instead, 
 $AKSDEV_ID and $AKSSRE_ID were replaced by existing users' ids.
 - Note: if you are in the cluster admin AD group, you will see all cluster resources regardless of whether you use cluster admin or cluster user context (acquired via the az aks get-credentials command).
+- Note: if you destroy the resources and then apply them again, you may need to acquire new credentials to kubeconfig to be able to install the K8S CSI driver.
 
 After doing those steps, with your cluster user credentials, you should only be able to see and modify resources in specific namespaces.
 
 
 #### Misc. links regarding roles and namespaces:
 https://docs.microsoft.com/en-us/azure/aks/azure-ad-rbac
+
 https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/group
+
 https://www.danielstechblog.io/azure-kubernetes-service-azure-rbac-for-kubernetes-authorization/
+
 https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/aks/managed-aad.md
+
 https://docs.microsoft.com/en-us/azure/aks/manage-azure-rbac
+
 https://registry.terraform.io/
+
 https://www.danielstechblog.io/terraform-deploy-an-aks-cluster-using-managed-identity-and-managed-azure-ad-integration/
+
 https://docs.microsoft.com/en-us/azure/aks/managed-aad
+
 https://www.chriswoolum.dev/aks-with-managed-identity-and-terraform
+
 https://docs.microsoft.com/en-us/azure/aks/kubernetes-portal#troubleshooting <-- Azure Portal resource view
+
 https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/role-based-access-control/built-in-roles.md#azure-kubernetes-service-cluster-user-role
 
-TODO: create AD group via this Terraform script.
-TODO: assign user as cluster admin via this Terraform script.
+https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+
