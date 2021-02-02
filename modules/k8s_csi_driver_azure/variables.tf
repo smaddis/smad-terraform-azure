@@ -7,7 +7,7 @@ variable "location" {
 }
 
 variable "project_name" {
-    default = "kuksatrng"
+    default = "rbackuksatrng"
 }
 
 # See secrets-store-csi-driver-provider-azure documentation, e.g. for version information.

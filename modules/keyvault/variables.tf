@@ -7,7 +7,7 @@ variable "location" {
 }
 
 variable "project_name" {
-    default = "kuksatrng"
+    default = "rbackuksatrng"
 }
 
 

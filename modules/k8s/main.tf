@@ -82,6 +82,16 @@ resource "azurerm_kubernetes_cluster" "k8s_cluster" {
         network_plugin = "kubenet"
     }
 
+    role_based_access_control {
+        enabled = true
+        azure_active_directory {
+            managed = true
+            admin_group_object_ids = [
+                "93b4062c-6cf4-4ed3-af28-9633d2785bda"
+            ]
+        }
+    }
+
     tags = {
         environment = var.environment
     }
