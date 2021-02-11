@@ -1,3 +1,13 @@
+
+## This is an archived repository
+
+Work on this repository and codebase has been discontinued.
+Work continues in https://github.com/smaddis/smad-deploy-azure
+This repository will be deleted in the future.
+
+
+
+
 Just practice based on https://docs.microsoft.com/en-us/azure/developer/terraform/create-k8s-cluster-with-tf-and-aks
 
 ### Infrastucture preparation for Kuksa Cloud
